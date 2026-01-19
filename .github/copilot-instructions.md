@@ -1,43 +1,45 @@
 # Copilot / AI Agent Instructions — python-learning
 
-Purpose
-- Help AI coding agents be immediately productive in this small, educational Python repo.
+## Purpose
+Help AI coding agents be immediately productive in this small, educational Python repo for beginner Python learning.
 
-Big picture
-- This repository is minimal: core code lives under `basics/` as standalone scripts used for learning. There is no package, tests, or CI in the repo.
-- Key files: `basics/hello.py`, `basics/input_example.py`, `basics/variables.py` — read these together to understand project intent (beginner-focused examples, short procedural scripts).
+## Architecture
+This repository is minimal and intentionally simple:
+- **Core code**: Standalone scripts under `basics/` folder (no packages, no tests, no CI)
+- **Entry-level flow**: `hello.py` → `variables.py` → `input_example.py` (read in this order to understand scope)
+- **Scope**: Procedural scripts demonstrating fundamental concepts: output, variables, input/types
 
-What to preserve
-- Preserve the pedagogical intent: changes should keep examples simple and explicit. Avoid introducing frameworks or advanced idioms unless the change is explicitly educational.
-- Preserve any user-visible strings (examples and prompts) unless asked to reword them for clarity.
+## Critical Developer Workflows
+- **Run scripts**: `python basics/hello.py` (or any file in `basics/`)
+- **Interactive testing**: `python -i basics/hello.py` for REPL experimentation with small edits
+- **IDE debugging**: Use VS Code debugger to step through any single file
 
-Developer workflows (how to run and debug)
-- Run a script directly: `python basics/hello.py` (same for other files).
-- Use a REPL to experiment with small edits: `python -i basics/hello.py` or run the file inside an IDE debugger.
+## Project-Specific Patterns & Conventions
+- **Single-file scripts**: Keep edits minimal and self-contained. If adding functions, keep them in the same file unless consolidating multiple examples.
+- **Pedagogical purity**: Preserve simplicity and explicitness. Avoid frameworks, decorators, or advanced idioms unless explicitly educational.
+- **No external dependencies**: All examples use only Python stdlib. If expansion requires packages, create `requirements.txt` and document in these instructions.
+- **User-visible strings**: Preserve example prompts/outputs unless asked to reword for clarity.
 
-Project-specific patterns and conventions
-- Single-file scripts: prefer minimal, self-contained edits. If you add helper functions, keep them in the same file unless consolidating multiple examples.
-- No external dependencies: don't add packages unless a user requests expanded examples with dependencies and a `requirements.txt` is added.
+## Discoverable Patterns from Files
+- **hello.py**: Multilingual `print()` example (currently prints Greek text)
+- **variables.py**: Basic assignment with simple types (str, int) and print statements
+- **input_example.py**: Interactive prompts with `input()`, string concatenation, f-strings, `len()`, type conversion, arithmetic
 
-Examples of common, acceptable edits
-- Fix obvious syntax/runtime errors and make error messages beginner-friendly.
-- Improve comments and short inline explanations to make learning clearer.
-- Add small, self-contained examples (<= 30 lines) that illustrate a single concept.
+## Acceptable Edits
+- Fix syntax/runtime errors with beginner-friendly messages
+- Improve inline comments and explanations
+- Add small examples (≤30 lines) teaching a single concept
+- Clarify variable names or output text
 
-What to avoid
-- Do not convert the repo into a package or introduce a build system without explicit instruction.
-- Do not remove or significantly rewrite example prompts or sample inputs unless requested.
+## What to Avoid
+- Do not convert to a package or add build systems without explicit instruction
+- Do not remove or rewrite example prompts unless requested
+- Do not introduce external dependencies without user consent and `requirements.txt`
+- Do not use advanced features (decorators, metaclasses, comprehensions beyond basics)
 
-Integration points and external dependencies
-- None by default. If a change introduces external libraries, include a `requirements.txt` and update these instructions.
+## Integration & Dependencies
+- None by default; pure Python stdlib only
+- Ask user before adding any external library
 
-If unsure
-- Ask a human for guidance when a change would expand the repo's scope (adding tests, CI, packaging, or external services).
-
-Files to inspect for context
-- `basics/hello.py` — entry-level example (first read this).
-- `basics/input_example.py` — demonstrates input handling and prompts.
-- `basics/variables.py` — shows variable usage and simple expressions.
-
-Contact
-- Leave a short PR note explaining why a non-trivial change helps the learning goals (what concept it teaches or how it simplifies learning).
+## If Unsure
+Ask for human guidance when changes would expand scope (tests, CI, packaging, external services).
