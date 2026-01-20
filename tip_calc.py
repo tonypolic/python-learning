@@ -1,5 +1,5 @@
 print("Καλωσήρθες στον tip calculator")
-total_bill=int(input("Ποιο είναι το συνολικό ποσό του λογαριασμού; \n"))
+total_bill=float(input("Ποιο είναι το συνολικό ποσό του λογαριασμού; \n"))
 pososto=int(input("Ποσοστό φιλοδωρήματος\n"))
 atoma=int(input("Για πόσα άτομα είναι ο λογαριασμός; \n"))
 tip=round(float((total_bill+total_bill*pososto/100)/atoma),2)
