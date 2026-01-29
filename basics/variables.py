@@ -1,5 +1,7 @@
-fruits = ["apple", "banana", "cherry"]
-x, y, z = fruits
-print(x[-1])
-print(y)
-print(z)
+def life_in_weeks(age):
+    weeks=(90-age)*12*4.5
+    print(weeks)
+    print(f'You have {weeks} weeks left.')
+    
+age=int(input('Δώσε την ηλικία σου'))
+life_in_weeks(age)
