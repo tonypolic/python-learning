@@ -1,5 +1,4 @@
 import random
-player_number=0
 epityxia=False
 hynumber=random.randint(1,100)
 
