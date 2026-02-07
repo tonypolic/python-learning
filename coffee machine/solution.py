@@ -4,27 +4,6 @@ current_water=main.resources["water"]
 current_milk=main.resources["milk"]
 current_coffee=main.resources["coffee"]
 
-
-# επιλογή από χρήστη είδους καφε
-
-def select_coffee(user_coffee):
-    coffeeid=0
-    coffee_proc=True
-    if user_coffee=="espresso":
-        coffeeid=0
-    elif user_coffee=="latte":
-        coffeeid=1
-    elif user_coffee=="cappucino":
-        coffeeid=2
-    elif user_coffee=="off":
-        coffee_proc=False
-    elif user_coffee=="report":
-        def current_ressources():
-    
-    return coffeeid, coffee_proc
-
-
-
 # έλεγχος εάν υπάρχουν διαθέσιμα υλικά
 for item in main.MENU[user_coffee]["ingredients"]:
     if main.MENU[user_coffee]["ingredients"][item] > main.resources[item]:
