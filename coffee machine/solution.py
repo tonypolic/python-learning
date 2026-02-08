@@ -34,6 +34,7 @@ def current_ressources():
     current_milk=current_milk-main.MENU[user_coffee]["ingredients"]["milk"]
     current_coffee=current_coffee-main.MENU[user_coffee]["ingredients"]["coffee"]
 
+
 # επιλογή από χρήστη είδους καφε
 user_coffee=input("What would you like? (espresso/latte/cappuccino):").lower()
 if user_coffee=="espresso":
