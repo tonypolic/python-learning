@@ -1,12 +1,14 @@
 import main
 #αποθεμα σε καφετιέρα
+coffee_proc=True
 current_water=main.resources["water"]
 current_milk=main.resources["milk"]
 current_coffee=main.resources["coffee"]
 
 # έλεγχος εάν υπάρχουν διαθέσιμα υλικά
-def check_ressources():
+def check_ressources(user_coffee):
     for item in main.MENU[user_coffee]["ingredients"]:
+        print (f"απόθεμα=")
         if main.MENU[user_coffee]["ingredients"][item] > main.resources[item]:
             print(f'den eparkei to {main.MENU[user_coffee]["ingredients"][item]}')
             return False
@@ -35,25 +37,30 @@ def current_ressources():
     current_coffee=current_coffee-main.MENU[user_coffee]["ingredients"]["coffee"]
 
 # επιλογή από χρήστη είδους καφε
-user_coffee=input("What would you like? (espresso/latte/cappuccino):").lower()
-if user_coffee=="espresso":
-        coffeeid=0
-elif user_coffee=="latte":
-        coffeeid=1
-elif user_coffee=="cappucino":
-        coffeeid=2
-elif user_coffee=="off":
+while coffee_proc==True:
+    user_coffee=input("What would you like? (espresso/latte/cappuccino):").lower()
+    if user_coffee=="off":
+            coffee_proc=False
+    elif user_coffee=="report":
+        print(f"Water: {current_water}ml")
+        print(f"Milk: {current_milk}ml")
+        print(f"Coffee: {current_coffee}g")
         coffee_proc=False
-elif user_coffee=="report":
-    current_water=main.resources["water"]
-    current_milk=main.resources["milk"]
-    current_coffee=main.resources["coffee"]
+
+    if user_coffee!="off" and user_coffee!="report":
+        check_ressources(user_coffee)
+        if coins_available==True:
+            current_ressources()
+        else:
+            coffee_proc=False
+
+
        
 
-print(f"water={main.MENU[user_coffee]["ingredients"]["water"]}")
-print(f"milk={main.MENU[user_coffee]["ingredients"]["milk"]}")
-print(f"coffee={main.MENU[user_coffee]["ingredients"]["coffee"]}")
+# print(f"water={main.MENU[user_coffee]["ingredients"]["water"]}")
+# print(f"milk={main.MENU[user_coffee]["ingredients"]["milk"]}")
+# print(f"coffee={main.MENU[user_coffee]["ingredients"]["coffee"]}")
 
-print(main.MENU[user_coffee]["cost"])
+# print(main.MENU[user_coffee]["cost"])
 
     
