@@ -1,6 +1,6 @@
 class MenuItem:
     """Models each Menu Item."""
-    def __init__(self, name, water, milk, coffee, cost):
+    def __init__(self, name: str, water: int, milk: int, coffee: int, cost: float):
         self.name = name
         self.cost = cost
         self.ingredients = {
