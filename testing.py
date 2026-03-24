@@ -1,8 +1,16 @@
-telephones = {
-    "gi;annis":1235,
-    "kostas": 123423
-}
+import os
+import random
+from datetime import date
+a=0
+   
+a=random.randint(0,100)
+print(a)
+today = date.today().isoformat()
+print("Today's date:", today)
+print("OS Name:", os.name)
+f=open("test.txt","r")
+print(f.read())
+f.close()
+os.remove("test.txt")   
 
-print(telephones.keys())
-print(telephones.values())
-print(telephones.items())
+
